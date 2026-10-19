@@ -2,9 +2,9 @@
 
 ## Apresentação
 
-O **Sorriso Brilhante** é uma aplicação web educativa desenvolvida como parte de uma ação de extensão universitária, em colaboração com um aluno de graduação em Odontologia. O projeto foi concebido para apoiar atividades de educação em saúde bucal voltadas ao atendimento infantil na clínica, auxiliando no engajamento das crianças durante as orientações de higiene oral.
+O **Sorriso Brilhante** é uma aplicação web educativa desenvolvida como parte de uma ação de extensão universitária, em parceria com um aluno do curso de Graduação em Odontologia. O projeto foi concebido para apoiar atividades educativas realizadas no atendimento infantil em clínica odontológica, auxiliando no engajamento das crianças durante as orientações de higiene bucal.
 
-A proposta é tornar o processo educativo mais lúdico, interativo e acessível. Por meio de atividades e recursos visuais, a aplicação busca contribuir para a adesão às práticas corretas de escovação e para a promoção da saúde bucal desde a infância. O sistema tem caráter educativo e complementar, não substituindo a orientação profissional ou a avaliação clínica individual.
+O objetivo da aplicação é oferecer recursos lúdicos e interativos para orientar crianças sobre higiene bucal, escovação correta e cuidados com a saúde oral. Ao tornar o processo educativo mais acessível e envolvente, o projeto busca contribuir para a adesão às práticas adequadas de escovação e para a promoção da saúde bucal desde a infância, apoiando as atividades de extensão e a atuação da equipe clínica. O sistema tem caráter educativo e complementar, não substituindo a orientação profissional ou a avaliação clínica individual.
 
 ## Recursos da aplicação
 
@@ -17,7 +17,7 @@ A proposta é tornar o processo educativo mais lúdico, interativo e acessível.
 
 ## Tecnologias e armazenamento
 
-A aplicação foi desenvolvida com **HTML, CSS e JavaScript puro**, sem dependências externas ou bibliotecas de terceiros necessárias para seu funcionamento. A fonte Nunito pode ser carregada do Google Fonts; se não houver conexão, são utilizadas fontes alternativas disponíveis no sistema.
+A aplicação foi desenvolvida com **HTML, CSS e JavaScript puro**, sem bibliotecas ou dependências externas necessárias para executar seus recursos. A implementação prioriza simplicidade, acessibilidade e facilidade de utilização durante as atividades de extensão. A fonte Nunito pode ser carregada opcionalmente do Google Fonts; se não houver conexão, são utilizadas fontes alternativas disponíveis no sistema.
 
 O diário de escovação e o progresso do quiz são armazenados localmente no navegador, por meio de `localStorage`. Esses dados permanecem no dispositivo e no navegador em que foram registrados; não são enviados a um servidor nem sincronizados entre dispositivos.
 
