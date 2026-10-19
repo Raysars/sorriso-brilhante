@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3ff">
+  <meta name="description" content="Uma aventura divertida para cuidar do sorriso: escovação, jogo dos alimentos e dicas para a família.">
+  <title>Sorriso Brilhante — cuidar dos dentes pode ser divertido!</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Sorriso Brilhante, início">
+        <span class="brand-mark" aria-hidden="true">🦷</span>
+        <span>Sorriso Brilhante</span>
+      </a>
+      <nav class="mode-switch" aria-label="Escolher modo">
+        <button class="mode-button" type="button" data-mode="child" aria-pressed="true">👶 Modo Criança</button>
+        <button class="mode-button" type="button" data-mode="family" aria-pressed="false">👨‍👩‍👧 Guia dos Pais</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="welcome-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Um sorriso de aventura!</p>
+          <h1 id="welcome-title">Vamos deixar esse sorriso brilhando!</h1>
+          <p>Aprenda a cuidar dos dentinhos brincando. Cada escovação é uma missão especial!</p>
+        </div>
+        <div class="mascot-wrap" aria-label="Mascote de um dentinho feliz">
+          <div class="mascot" role="img" aria-label="Dentinho feliz">🦷<span class="sparkle sparkle-one" aria-hidden="true">✦</span><span class="sparkle sparkle-two" aria-hidden="true">✧</span></div>
+        </div>
+      </section>
+
+      <section id="child-mode" aria-label="Atividades para crianças">
+        <div class="welcome-strip">
+          <span aria-hidden="true">🌟</span>
+          <span>Olá, explorador do sorriso! Vamos cuidar dos dentes juntos?</span>
+        </div>
+
+        <div class="child-grid">
+          <article class="card timer-card">
+            <div class="card-heading">
+              <span class="icon-bubble" aria-hidden="true">🪥</span>
+              <div>
+                <h2>Missão: escovação!</h2>
+                <p>Dois minutinhos para um sorriso brilhante.</p>
+              </div>
+            </div>
+            <div class="timer-display" id="timer-display" role="timer" aria-label="Tempo restante">2:00</div>
+            <p class="timer-caption" id="timer-caption">Pronto para começar?</p>
+            <div class="progress-track" role="progressbar" aria-label="Progresso da escovação" aria-valuemin="0" aria-valuemax="120" aria-valuenow="0">
+              <div class="progress-fill" id="timer-progress"></div>
+            </div>
+            <div class="mouth-map" aria-hidden="true">
+              <span class="mouth-zone active" data-zone="upper-right">Em cima · direita</span>
+              <span class="mouth-zone" data-zone="upper-left">Em cima · esquerda</span>
+              <span class="mouth-zone" data-zone="lower-right">Embaixo · direita</span>
+              <span class="mouth-zone" data-zone="lower-left">Embaixo · esquerda</span>
+              <span class="mouth-zone tongue" data-zone="tongue">Língua 👅</span>
+            </div>
+            <div class="mouth-step" aria-live="polite" aria-atomic="true">
+              <strong id="mouth-instruction">Vamos começar pela parte de cima!</strong>
+              <span id="mouth-time">Sua missão dura 2 minutos</span>
+            </div>
+            <div class="timer-buttons">
+              <button class="button" id="timer-start" type="button">▶ Iniciar</button>
+              <button class="button secondary" id="timer-pause" type="button" disabled>⏸ Pausar</button>
+              <button class="button secondary" id="timer-reset" type="button">↺ Reiniciar</button>
+            </div>
+          </article>
+
+          <article class="card game-card">
+            <div class="card-heading">
+              <span class="icon-bubble blue" aria-hidden="true">🍎</span>
+              <div>
+                <h2>Amigo ou inimigo?</h2>
+                <p>Vamos descobrir quem ajuda os dentinhos.</p>
+              </div>
+              <span class="game-score" aria-label="Pontos de acerto">⭐ <span id="quiz-score">0</span></span>
+            </div>
+            <div class="food-stage" aria-live="polite">
+              <span class="food-emoji" id="food-emoji" aria-hidden="true">🍎</span>
+              <p class="food-name" id="food-name">Maçã</p>
+            </div>
+            <p class="question-label">Este alimento é amigo ou inimigo do dentinho?</p>
+            <div class="answer-buttons">
+              <button class="button yellow answer-button" type="button" data-answer="healthy">😊 Dentinho feliz</button>
+              <button class="button pink answer-button" type="button" data-answer="sugary">😢 Dentinho triste</button>
+            </div>
+            <p class="game-feedback" id="game-feedback" role="status" aria-live="polite">Escolha uma resposta para jogar!</p>
+            <div class="game-footer">
+              <span class="game-progress" id="quiz-progress">Pergunta 1 de 6</span>
+              <button class="button secondary" id="quiz-next" type="button" hidden>Próximo alimento →</button>
+            </div>
+          </article>
+        </div>
+
+        <article class="card tracker-card">
+          <div class="tracker-top">
+            <div class="card-heading">
+              <span class="icon-bubble pink" aria-hidden="true">📅</span>
+              <div>
+                <h2>Meu diário de escovação</h2>
+                <p>Marque cada missão que você completou hoje.</p>
+              </div>
+            </div>
+            <span class="today-label" id="today-label"></span>
+          </div>
+          <div class="routine-buttons">
+            <button class="routine-button" type="button" data-routine="morning" aria-pressed="false">
+              <span class="routine-emoji" aria-hidden="true">☀️</span>
+              <span>Escovação da manhã<span class="routine-status">Toque para marcar</span></span>
+            </button>
+            <button class="routine-button" type="button" data-routine="night" aria-pressed="false">
+              <span class="routine-emoji" aria-hidden="true">🌙</span>
+              <span>Escovação da noite<span class="routine-status">Toque para marcar</span></span>
+            </button>
+          </div>
+          <h3 class="week-title">Sua semana de sorrisos</h3>
+          <div class="week-grid" id="week-grid" aria-label="Histórico dos últimos sete dias"></div>
+        </article>
+      </section>
+
+      <section id="family-mode" aria-label="Orientações para a família" hidden>
+        <div class="family-intro">
+          <div>
+            <p class="eyebrow">Informação para cuidar</p>
+            <h2>Guia do sorriso em família</h2>
+            <p>Dicas práticas para acompanhar a saúde bucal da criança em cada fase.</p>
+          </div>
+          <span class="family-icon" aria-hidden="true">💜</span>
+        </div>
+
+        <div class="family-grid">
+          <article class="card">
+            <div class="card-heading">
+              <span class="icon-bubble" aria-hidden="true">🧴</span>
+              <div>
+                <h2>Pasta com flúor</h2>
+                <p>Uma quantidade pequena é suficiente.</p>
+              </div>
+            </div>
+            <div class="dose-options">
+              <div class="dose-option">
+                <span class="dose-age">0 a 3 anos</span>
+                <span class="dose-picture" aria-hidden="true">🍚</span>
+                <span class="dose-amount">Grão de arroz cru</span>
+                <p>Aproximadamente 0,1 g</p>
+              </div>
+              <div class="dose-option">
+                <span class="dose-age">Acima de 3 anos</span>
+                <span class="dose-picture" aria-hidden="true">🟢</span>
+                <span class="dose-amount">Grão de ervilha</span>
+                <p>Aproximadamente 0,3 g</p>
+              </div>
+            </div>
+            <div class="note-box"><strong>Confira o rótulo:</strong> use pasta com concentração igual ou superior a 1.000 ppm de flúor. Um adulto deve colocar a quantidade e supervisionar a escovação, evitando que a criança engula a pasta.</div>
+          </article>
+
+          <article class="card">
+            <div class="card-heading">
+              <span class="icon-bubble pink" aria-hidden="true">🆘</span>
+              <div>
+                <h2>Trauma dentário</h2>
+                <p>Se um dente permanente sair do lugar, aja rápido.</p>
+              </div>
+            </div>
+            <ol class="steps">
+              <li>Encontre o dente e segure apenas pela coroa (a parte branca). Nunca toque na raiz.</li>
+              <li>Não esfregue o dente nem lave com sabão.</li>
+              <li>Coloque-o em um copo com leite ou soro fisiológico.</li>
+              <li>Procure um cirurgião-dentista imediatamente, idealmente em até 60 minutos.</li>
+            </ol>
+            <div class="note-box blue-note"><strong>Importante:</strong> dente de leite não deve ser recolocado. Em caso de trauma, procure atendimento odontológico de urgência. Se houver sangramento intenso, dificuldade para respirar ou ferimento grave, procure também um serviço de emergência.</div>
+          </article>
+
+          <article class="card full-width-card">
+            <div class="card-heading">
+              <span class="icon-bubble blue" aria-hidden="true">💡</span>
+              <div>
+                <h2>Mitos e verdades</h2>
+                <p>Toque nas perguntas para ver as respostas.</p>
+              </div>
+            </div>
+            <div class="myth-list">
+              <details class="myth">
+                <summary>Chupeta sempre entorta os dentes: mito ou verdade?</summary>
+                <p>O uso prolongado e frequente pode influenciar o crescimento da arcada e a posição dos dentes. Converse com o odontopediatra sobre o momento e a forma de retirar o hábito.</p>
+              </details>
+              <details class="myth">
+                <summary>Mamadeira durante a noite pode causar cárie?</summary>
+                <p>Sim. A exposição frequente a bebidas açucaradas, especialmente durante o sono, aumenta o risco de cárie. Evite colocar açúcar ou bebidas adoçadas na mamadeira e peça orientação sobre a rotina noturna.</p>
+              </details>
+              <details class="myth">
+                <summary>O que é cárie de mamadeira?</summary>
+                <p>É um nome usado para cáries precoces na infância, associadas à exposição frequente dos dentes a líquidos com açúcar. A higiene desde o nascimento do primeiro dente e o acompanhamento odontológico ajudam na prevenção.</p>
+              </details>
+              <details class="myth">
+                <summary>Quando nascem os primeiros dentinhos?</summary>
+                <p>Com frequência, os primeiros dentes aparecem por volta dos 6 meses, mas há variações entre crianças. A primeira consulta odontológica é recomendada no primeiro ano de vida, ou quando nasce o primeiro dente.</p>
+              </details>
+            </div>
+          </article>
+        </div>
+        <p class="family-disclaimer">Este guia é educativo e não substitui uma avaliação individual com cirurgião-dentista ou odontopediatra.</p>
+      </section>
+    </main>
+
+    <footer>Feito com carinho para pequenos sorrisos. 🦷💜</footer>
+  </div>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
