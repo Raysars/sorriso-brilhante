@@ -1,64 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f3ff">
-  <meta name="description" content="Uma aventura divertida para cuidar do sorriso: escovação, jogo dos alimentos e dicas para a família.">
-  <title>Sorriso Brilhante — cuidar dos dentes pode ser divertido!</title>
-  
+  <meta name="theme-color" content="#fff8ec">
+  <meta name="description" content="SORRIAÊ: orientações de saúde bucal infantil para crianças, pais e responsáveis.">
+  <title>SORRIAÊ — Saúde bucal infantil</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo-sorriae.jpg">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="shell">
-    <header class="topbar">
-      <a class="brand" href="#" aria-label="Sorriso Brilhante, início">
-        <span class="brand-mark" aria-hidden="true">🦷</span>
-        <span>Sorriso Brilhante</span>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="SORRIAÊ, início">
+        <img src="assets/logo-sorriae.jpg" alt="" width="52" height="52">
+        <span class="brand-copy">
+          <strong>SORRIAÊ</strong>
+          <span>Saúde bucal infantil</span>
+        </span>
       </a>
-      <nav class="mode-switch" aria-label="Escolher modo">
-        <button class="mode-button" type="button" data-mode="child" aria-pressed="true">👶 Modo Criança</button>
-        <button class="mode-button" type="button" data-mode="family" aria-pressed="false">👨‍👩‍👧 Guia dos Pais</button>
+      <nav class="mode-switch" aria-label="Escolha uma área">
+        <button class="mode-button" type="button" data-mode="child" aria-controls="child-mode" aria-pressed="true">
+          <span aria-hidden="true">✨</span> Para crianças
+        </button>
+        <button class="mode-button" type="button" data-mode="family" aria-controls="family-mode" aria-pressed="false">
+          <span aria-hidden="true">💛</span> Para a família
+        </button>
       </nav>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="welcome-title">
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="welcome-title">
         <div class="hero-copy">
-          <p class="eyebrow">Um sorriso de aventura!</p>
-          <h1 id="welcome-title">Vamos deixar esse sorriso brilhando!</h1>
-          <p>Aprenda a cuidar dos dentinhos brincando. Cada escovação é uma missão especial!</p>
+          <p class="eyebrow">Pequenos cuidados, grandes sorrisos</p>
+          <h1 id="welcome-title">Cuidar do sorriso pode ser uma aventura!</h1>
+          <p>Aprenda a escovar, descubra escolhas que protegem os dentes e acompanhe cada missão em família.</p>
+          <div class="hero-tags" aria-label="Conteúdos do Sorriaê">
+            <span>🪥 Escovação</span>
+            <span>🥕 Alimentação</span>
+            <span>👨‍👩‍👧 Cuidado em família</span>
+          </div>
         </div>
-        <div class="mascot-wrap" aria-label="Mascote de um dentinho feliz">
-          <div class="mascot" role="img" aria-label="Dentinho feliz">🦷<span class="sparkle sparkle-one" aria-hidden="true">✦</span><span class="sparkle sparkle-two" aria-hidden="true">✧</span></div>
-        </div>
+        <figure class="hero-photo">
+          <img src="assets/crianca-escovando.jpg" alt="Criança escovando os dentes no banheiro.">
+          <figcaption>Um passinho de cada vez, com um adulto por perto.</figcaption>
+          <span class="photo-sparkle" aria-hidden="true">✦</span>
+        </figure>
       </section>
 
       <section id="child-mode" aria-label="Atividades para crianças">
         <div class="welcome-strip">
-          <span aria-hidden="true">🌟</span>
-          <span>Olá, explorador do sorriso! Vamos cuidar dos dentes juntos?</span>
+          <span class="welcome-star" aria-hidden="true">✦</span>
+          <p><strong>Oi, explorador do sorriso!</strong> Escolha uma missão para começar.</p>
         </div>
 
         <div class="child-grid">
           <article class="card timer-card">
             <div class="card-heading">
-              <span class="icon-bubble" aria-hidden="true">🪥</span>
+              <span class="icon-bubble yellow" aria-hidden="true">🪥</span>
               <div>
-                <h2>Missão: escovação!</h2>
-                <p>Dois minutinhos para um sorriso brilhante.</p>
+                <p class="card-kicker">Missão 1</p>
+                <h2>Escovação caprichada</h2>
+                <p>Dois minutinhos para cuidar de cada cantinho.</p>
               </div>
             </div>
-            <div class="timer-display" id="timer-display" role="timer" aria-label="Tempo restante">2:00</div>
+            <div class="timer-display" id="timer-display" role="timer" aria-label="2 minutos restantes">2:00</div>
             <p class="timer-caption" id="timer-caption">Pronto para começar?</p>
             <div class="progress-track" role="progressbar" aria-label="Progresso da escovação" aria-valuemin="0" aria-valuemax="120" aria-valuenow="0">
               <div class="progress-fill" id="timer-progress"></div>
             </div>
-            <div class="mouth-map" aria-hidden="true">
+            <div class="mouth-map" aria-label="Regiões da escovação">
               <span class="mouth-zone active" data-zone="upper-right">Em cima · direita</span>
               <span class="mouth-zone" data-zone="upper-left">Em cima · esquerda</span>
-              <span class="mouth-zone" data-zone="lower-right">Embaixo · direita</span>
               <span class="mouth-zone" data-zone="lower-left">Embaixo · esquerda</span>
+              <span class="mouth-zone" data-zone="lower-right">Embaixo · direita</span>
               <span class="mouth-zone tongue" data-zone="tongue">Língua 👅</span>
             </div>
             <div class="mouth-step" aria-live="polite" aria-atomic="true">
@@ -68,7 +85,7 @@
             <div class="timer-buttons">
               <button class="button" id="timer-start" type="button">▶ Iniciar</button>
               <button class="button secondary" id="timer-pause" type="button" disabled>⏸ Pausar</button>
-              <button class="button secondary" id="timer-reset" type="button">↺ Reiniciar</button>
+              <button class="button text-button" id="timer-reset" type="button">↺ Reiniciar</button>
             </div>
           </article>
 
@@ -76,19 +93,20 @@
             <div class="card-heading">
               <span class="icon-bubble blue" aria-hidden="true">🍎</span>
               <div>
-                <h2>Amigo ou inimigo?</h2>
-                <p>Vamos descobrir quem ajuda os dentinhos.</p>
+                <p class="card-kicker">Missão 2</p>
+                <h2>Amigo do dentinho?</h2>
+                <p>Descubra o que merece atenção na hora de comer.</p>
               </div>
-              <span class="game-score" aria-label="Pontos de acerto">⭐ <span id="quiz-score">0</span></span>
+              <span class="game-score" aria-label="Pontos">⭐ <span id="quiz-score">0</span></span>
             </div>
             <div class="food-stage" aria-live="polite">
               <span class="food-emoji" id="food-emoji" aria-hidden="true">🍎</span>
               <p class="food-name" id="food-name">Maçã</p>
             </div>
-            <p class="question-label">Este alimento é amigo ou inimigo do dentinho?</p>
+            <p class="question-label">Como esse alimento combina com o cuidado dos dentes?</p>
             <div class="answer-buttons">
-              <button class="button yellow answer-button" type="button" data-answer="healthy">😊 Dentinho feliz</button>
-              <button class="button pink answer-button" type="button" data-answer="sugary">😢 Dentinho triste</button>
+              <button class="button answer-button" type="button" data-answer="healthy">😊 Boa escolha</button>
+              <button class="button answer-button caution" type="button" data-answer="limit">⚠️ Com atenção</button>
             </div>
             <p class="game-feedback" id="game-feedback" role="status" aria-live="polite">Escolha uma resposta para jogar!</p>
             <div class="game-footer">
@@ -101,10 +119,11 @@
         <article class="card tracker-card">
           <div class="tracker-top">
             <div class="card-heading">
-              <span class="icon-bubble pink" aria-hidden="true">📅</span>
+              <span class="icon-bubble coral" aria-hidden="true">📅</span>
               <div>
-                <h2>Meu diário de escovação</h2>
-                <p>Marque cada missão que você completou hoje.</p>
+                <p class="card-kicker">Meu progresso</p>
+                <h2>Diário de escovação</h2>
+                <p>Marque as missões que você completou hoje.</p>
               </div>
             </div>
             <span class="today-label" id="today-label"></span>
@@ -125,94 +144,169 @@
       </section>
 
       <section id="family-mode" aria-label="Orientações para a família" hidden>
-        <div class="family-intro">
+        <div class="section-banner">
           <div>
             <p class="eyebrow">Informação para cuidar</p>
-            <h2>Guia do sorriso em família</h2>
-            <p>Dicas práticas para acompanhar a saúde bucal da criança em cada fase.</p>
+            <h2>Um guia para cada fase do sorriso</h2>
+            <p>Orientações do material SORRIAÊ para acompanhar a saúde bucal da criança.</p>
           </div>
-          <span class="family-icon" aria-hidden="true">💜</span>
+          <span class="banner-icon" aria-hidden="true">🌈</span>
         </div>
 
-        <div class="family-grid">
-          <article class="card">
-            <div class="card-heading">
-              <span class="icon-bubble" aria-hidden="true">🧴</span>
-              <div>
-                <h2>Pasta com flúor</h2>
-                <p>Uma quantidade pequena é suficiente.</p>
-              </div>
+        <section class="guide-section" aria-labelledby="ages-title">
+          <div class="section-title">
+            <span class="section-number">01</span>
+            <div>
+              <h2 id="ages-title">Fases da infância</h2>
+              <p>Os cuidados mudam conforme os dentes crescem.</p>
             </div>
-            <div class="dose-options">
-              <div class="dose-option">
-                <span class="dose-age">0 a 3 anos</span>
-                <span class="dose-picture" aria-hidden="true">🍚</span>
-                <span class="dose-amount">Grão de arroz cru</span>
-                <p>Aproximadamente 0,1 g</p>
+          </div>
+          <div class="age-grid">
+            <article class="card age-card">
+              <img class="age-photo" src="assets/bebe-escovando.jpg" alt="Responsável escovando com cuidado os primeiros dentinhos de um bebê." loading="lazy">
+              <div class="age-content">
+                <p class="age-label">Primeiros dentes · 0 a 6 meses</p>
+                <h3>Primeiros dentinhos</h3>
+                <p>Após a amamentação, limpe a gengiva com gaze úmida. Os primeiros dentes costumam aparecer por volta dos 6 meses.</p>
+                <p>Quando os dentes nascerem, use uma escova de cabeça pequena e macia e creme dental fluoretado na quantidade indicada para a idade, após cada mamada.</p>
               </div>
-              <div class="dose-option">
-                <span class="dose-age">Acima de 3 anos</span>
-                <span class="dose-picture" aria-hidden="true">🟢</span>
-                <span class="dose-amount">Grão de ervilha</span>
-                <p>Aproximadamente 0,3 g</p>
+            </article>
+            <article class="card age-card">
+              <img class="age-photo" src="assets/crianca-com-responsavel.jpg" alt="Adulto acompanhando uma criança enquanto ela escova os dentes." loading="lazy">
+              <div class="age-content">
+                <p class="age-label">De 1 a 3 anos</p>
+                <h3>Aprender junto</h3>
+                <p>A criança pode querer escovar sozinha, mas ainda precisa de ajuda. Use escova pequena e macia e escove duas vezes ao dia, garantindo que todos os dentes sejam alcançados. A orientação desta faixa etária menciona creme dental do tamanho de um grão de arroz; confira a divergência sobre a quantidade no destaque abaixo.</p>
+                <p>Ensine a cuspir a espuma sem engolir. O uso do fio dental é recomendado nesta fase.</p>
               </div>
-            </div>
-            <div class="note-box"><strong>Confira o rótulo:</strong> use pasta com concentração igual ou superior a 1.000 ppm de flúor. Um adulto deve colocar a quantidade e supervisionar a escovação, evitando que a criança engula a pasta.</div>
-          </article>
+            </article>
+            <article class="card age-card">
+              <img class="age-photo" src="assets/crianca-escovando.jpg" alt="Criança escovando os dentes em frente ao espelho." loading="lazy">
+              <div class="age-content">
+                <p class="age-label">Aos 6 anos</p>
+                <h3>Novos hábitos</h3>
+                <p>Nesta idade, a criança tem 20 dentes de leite e pode começar a troca. Ensine movimentos circulares, três escovações ao dia e a cuspir o excesso sem enxaguar com água.</p>
+                <p>Prefira frutas, evite bebidas açucaradas e doces entre as refeições. Consulte o dentista a cada seis meses.</p>
+              </div>
+            </article>
+            <article class="card age-card">
+              <img class="age-photo" src="assets/troca-dos-dentes.jpg" alt="Criança mostrando os dentes durante a fase de troca dos dentes de leite." loading="lazy">
+              <div class="age-content">
+                <p class="age-label">De 6 a 12 anos</p>
+                <h3>Troca dos dentes</h3>
+                <p>Os dentes de leite dão lugar aos permanentes. Os primeiros molares permanentes nascem por volta dos 6 anos e podem passar despercebidos.</p>
+                <p>Continue supervisionando a escovação, usando creme dental fluoretado na quantidade indicada e observando dentes que nasçam tortos.</p>
+              </div>
+            </article>
+          </div>
+          <p class="age-note"><strong>Primeira consulta:</strong> leve o bebê ao dentista ainda no primeiro ano de vida. Evite mamadeiras com açúcar.</p>
+        </section>
 
-          <article class="card">
-            <div class="card-heading">
-              <span class="icon-bubble pink" aria-hidden="true">🆘</span>
-              <div>
-                <h2>Trauma dentário</h2>
-                <p>Se um dente permanente sair do lugar, aja rápido.</p>
-              </div>
+        <section class="guide-section" aria-labelledby="brushing-title">
+          <div class="section-title">
+            <span class="section-number">02</span>
+            <div>
+              <h2 id="brushing-title">Como escovar os dentes</h2>
+              <p>Movimentos suaves, sem pressa e com supervisão.</p>
             </div>
-            <ol class="steps">
-              <li>Encontre o dente e segure apenas pela coroa (a parte branca). Nunca toque na raiz.</li>
-              <li>Não esfregue o dente nem lave com sabão.</li>
-              <li>Coloque-o em um copo com leite ou soro fisiológico.</li>
-              <li>Procure um cirurgião-dentista imediatamente, idealmente em até 60 minutos.</li>
-            </ol>
-            <div class="note-box blue-note"><strong>Importante:</strong> dente de leite não deve ser recolocado. Em caso de trauma, procure atendimento odontológico de urgência. Se houver sangramento intenso, dificuldade para respirar ou ferimento grave, procure também um serviço de emergência.</div>
-          </article>
+          </div>
+          <div class="technique-layout">
+            <article class="card technique-card">
+              <img class="technique-photo" src="assets/crianca-com-responsavel.jpg" alt="Responsável perto da criança durante a escovação." loading="lazy">
+              <div>
+                <h3>Uma posição confortável</h3>
+                <p>Coloque a criança de frente para você ou atrás de você, com a cabeça apoiada no seu peito.</p>
+                <h3>Escove todas as superfícies</h3>
+                <p>Limpe por fora, por dentro e por cima dos dentes com movimentos circulares suaves, sem fazer força. Escove também a língua para deixar o hálito fresquinho.</p>
+                <p class="highlight-note">O material recomenda escovar a língua e escovar os dentes de 2 a 3 vezes ao dia; aos 6 anos, recomenda 3 vezes ao dia.</p>
+              </div>
+            </article>
+            <article class="card dosage-card">
+              <div class="card-heading">
+                <span class="icon-bubble yellow" aria-hidden="true">🧴</span>
+                <div>
+                  <p class="card-kicker">Creme dental com flúor</p>
+                  <h3>A quantidade certa para cada idade</h3>
+                </div>
+              </div>
+              <img class="dosage-image" src="assets/quantidade-creme-dental.jpg" alt="Ilustração compara a quantidade de creme dental a meio grão de arroz, um grão de arroz e um grão de ervilha." loading="lazy">
+              <ul class="dose-list">
+                <li><strong>De 6 meses até 3 anos:</strong> meio grão de arroz.</li>
+                <li><strong>Dos 3 aos 6 anos:</strong> um grão de arroz.</li>
+                <li><strong>A partir dos 6 anos:</strong> um grão de ervilha.</li>
+              </ul>
+              <p>Depois da escovação, peça à criança para cuspir o excesso, sem enxaguar com água. Guarde o tubo fora do alcance das crianças.</p>
+              <p class="note-box"><strong>Atenção:</strong> o PDF diverge: a orientação para 1 a 3 anos menciona um grão de arroz, mas o quadro específico de quantidade indica meio grão até os 3 anos. Confirme a quantidade adequada com o dentista da criança.</p>
+            </article>
+          </div>
+        </section>
 
-          <article class="card full-width-card">
-            <div class="card-heading">
-              <span class="icon-bubble blue" aria-hidden="true">💡</span>
-              <div>
-                <h2>Mitos e verdades</h2>
-                <p>Toque nas perguntas para ver as respostas.</p>
-              </div>
+        <section class="guide-section" aria-labelledby="food-title">
+          <div class="section-title">
+            <span class="section-number">03</span>
+            <div>
+              <h2 id="food-title">Alimentação que protege os dentes</h2>
+              <p>Pequenas escolhas ajudam a cuidar do sorriso.</p>
             </div>
-            <div class="myth-list">
-              <details class="myth">
-                <summary>Chupeta sempre entorta os dentes: mito ou verdade?</summary>
-                <p>O uso prolongado e frequente pode influenciar o crescimento da arcada e a posição dos dentes. Converse com o odontopediatra sobre o momento e a forma de retirar o hábito.</p>
-              </details>
-              <details class="myth">
-                <summary>Mamadeira durante a noite pode causar cárie?</summary>
-                <p>Sim. A exposição frequente a bebidas açucaradas, especialmente durante o sono, aumenta o risco de cárie. Evite colocar açúcar ou bebidas adoçadas na mamadeira e peça orientação sobre a rotina noturna.</p>
-              </details>
-              <details class="myth">
-                <summary>O que é cárie de mamadeira?</summary>
-                <p>É um nome usado para cáries precoces na infância, associadas à exposição frequente dos dentes a líquidos com açúcar. A higiene desde o nascimento do primeiro dente e o acompanhamento odontológico ajudam na prevenção.</p>
-              </details>
-              <details class="myth">
-                <summary>Quando nascem os primeiros dentinhos?</summary>
-                <p>Com frequência, os primeiros dentes aparecem por volta dos 6 meses, mas há variações entre crianças. A primeira consulta odontológica é recomendada no primeiro ano de vida, ou quando nasce o primeiro dente.</p>
-              </details>
+          </div>
+          <article class="card food-guide">
+            <div class="food-copy">
+              <h3>Frutas, legumes e água: bons amigos dos dentes</h3>
+              <p>Evite açúcar entre as refeições: cada beliscada de doce alimenta as bactérias que causam cáries.</p>
+              <p>Refrigerantes e sucos industrializados têm muito açúcar e também são ácidos; deixe para ocasiões especiais. Ofereça água depois das refeições para ajudar a limpar a boca.</p>
+            </div>
+            <img src="assets/prevencao-carie.jpg" alt="Ilustração mostra dentes saudáveis e dentes afetados pela cárie." loading="lazy">
+          </article>
+        </section>
+
+        <section class="guide-section" aria-labelledby="trauma-title">
+          <div class="section-title">
+            <span class="section-number">04</span>
+            <div>
+              <h2 id="trauma-title">Trauma dentário: o que fazer?</h2>
+              <p>Se a criança cair e bater o dente, mantenha a calma e procure atendimento.</p>
+            </div>
+          </div>
+          <article class="card trauma-card">
+            <img class="trauma-image" src="assets/trauma-dentario.jpg" alt="Infográfico do SORRIAÊ com orientações sobre trauma dentário infantil." loading="lazy">
+            <div class="trauma-content">
+              <p>Tranquilize a criança, que pode estar assustada ou com dor, e identifique se o dente é de leite ou permanente. A troca começa por volta dos 6 anos; os dentes permanentes permanecem por toda a vida.</p>
+              <div class="trauma-grid">
+                <section class="trauma-step">
+                  <h3>Se um dente de leite sair inteiro</h3>
+                  <p><strong>Não tente recolocá-lo.</strong> Isso pode afetar o dente permanente que está se formando.</p>
+                </section>
+                <section class="trauma-step">
+                  <h3>Se um dente permanente sair inteiro</h3>
+                  <ul>
+                    <li>Segure pela coroa (parte branca), nunca pela raiz.</li>
+                    <li>Se estiver sujo, lave rapidamente com soro fisiológico ou água limpa, sem esfregar.</li>
+                    <li>Tente recolocá-lo com cuidado ou guarde-o em leite, soro fisiológico ou na saliva da própria criança, dentro de um potinho.</li>
+                    <li>Procure imediatamente um dentista ou pronto-socorro, idealmente em até 1 hora.</li>
+                  </ul>
+                </section>
+                <section class="trauma-step">
+                  <h3>Se o dente quebrar</h3>
+                  <p>Se possível, procure o pedaço e leve-o ao dentista. Mesmo fraturas pequenas precisam de avaliação, pois pode haver risco de infecção.</p>
+                </section>
+                <section class="trauma-step">
+                  <h3>Observe após a batida</h3>
+                  <p>Mudança de cor, dor ao mastigar, inchaço ou secreção na gengiva e mobilidade persistente precisam ser avaliados por um dentista.</p>
+                </section>
+              </div>
+              <p class="urgent-note"><strong>Leve sempre a criança ao dentista após qualquer trauma</strong>, mesmo sem dor ou sangramento. Quedas simples podem afetar os dentes e as estruturas de suporte.</p>
             </div>
           </article>
-        </div>
-        <p class="family-disclaimer">Este guia é educativo e não substitui uma avaliação individual com cirurgião-dentista ou odontopediatra.</p>
+        </section>
+        <p class="family-disclaimer">Este conteúdo educativo não substitui a avaliação individual ou as orientações do cirurgião-dentista da criança.</p>
       </section>
     </main>
 
-    <footer>Feito com carinho para pequenos sorrisos. 🦷💜</footer>
+    <footer class="site-footer">
+      <a class="footer-brand" href="#inicio">SORRIAÊ</a>
+      <p>Orientações de saúde bucal infantil para pais e responsáveis.</p>
+      <span>Feito com carinho para pequenos sorrisos. 🦷</span>
+    </footer>
   </div>
-
-  
-  <script src="script.js"></script>
 </body>
 </html>
