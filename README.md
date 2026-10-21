@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SORRIAÊ
 
 O **SORRIAÊ** é uma aplicação web educativa com orientações de saúde bucal infantil para crianças, pais e responsáveis. O conteúdo reúne cuidados por fase da infância, técnica de escovação, quantidade de creme dental fluoretado, alimentação e como agir em caso de trauma dentário.
@@ -36,3 +37,6 @@ Abra [http://localhost:8000](http://localhost:8000) no navegador.
 3. Selecione a branch desejada e a pasta **/(root)** e salve.
 
 O conteúdo é educativo e não substitui avaliação ou orientação individual de um cirurgião-dentista ou odontopediatra.
+=======
+# sorriso-brilhante
+>>>>>>> c9afcb5ad77dc7c829a5ac286d4719f38bb8b4f7
